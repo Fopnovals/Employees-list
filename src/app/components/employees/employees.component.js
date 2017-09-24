@@ -12,7 +12,7 @@
         var _this = this;
 
         _this.employees = mainService.employees;
-        _this.colors = mainService.getColors();
+        _this.mainService = mainService;
 
         _this.editPerson = function(employee) {
           mainService.editPerson(employee.id);

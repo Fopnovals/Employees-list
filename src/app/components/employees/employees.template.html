@@ -1,7 +1,7 @@
 <div class="container">
   <div class="employee-cover"
        ng-repeat="employee in $ctrl.employees track by $index"
-       style="background-color: {{$ctrl.colors[$index]}}">
+       style="background-color: {{$ctrl.mainService.getColors()[$index]}}">
     <div class="info-box">
       <div class="info-box_half">
         <div class="info-box_name">
