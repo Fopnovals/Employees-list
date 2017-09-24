@@ -1,0 +1,265 @@
+@font-face {
+  font-family: "OpenSansRegular";
+  src: url("../assets/fonts/OpenSansRegular/OpenSansRegular.eot");
+  src: url("../assets/fonts/OpenSansRegular/OpenSansRegular.eot?#iefix")format("embedded-opentype"),
+  url("../assets/fonts/OpenSansRegular/OpenSansRegular.woff") format("woff"),
+  url("../assets/fonts/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+body {
+  background: #fff;
+  padding-top: 20px;
+  color: #000;
+  min-width: 320px;
+  margin: 0;
+  font: 12px/14px "OpenSansRegular", arial, helvetica, sans-serif;
+}
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+.clearfix:after {
+  clear: both;
+  display: block;
+  content: '';
+}
+.container {
+  margin: 20px auto 0;
+  max-width: 1270px;
+}
+.add-co-worker {
+  background-color: #ebebeb;
+}
+.inputs-container {
+  position: relative;
+  max-width: 1270px;
+  margin: 0 auto;
+}
+.inputs-cover {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 60px 20px 0;
+  justify-content: flex-start;
+}
+.label {
+  position: absolute;
+  z-index: 0;
+  left: 5px;
+  top: 5px;
+  font-size: 16px;
+  color: #a3a3a3;
+  transition: 0.3s;
+}
+.input-cover {
+  width: 18%;
+  min-width: 150px;
+  position: relative;
+  border-bottom: 2px solid #b6b6b6;
+  margin: 10px 8px;
+  background-color: #ebebeb;
+  input {
+    padding: 3px 5px;
+    border: none;
+    outline: none;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+  }
+  &.focused {
+    border-bottom: 2px solid #000;
+    .label {
+      top: -15px;
+      font-size: 12px;
+      color: #000;
+    }
+  }
+  .ng-not-empty + .label {
+    top: -15px;
+    font-size: 12px;
+    color: #000;
+  }
+}
+
+.buttons-cover {
+  width: 50px;
+  height: 100%;
+  right: 10px;
+  top: 0;
+  position: absolute;
+  background-color: #7fc27f;
+  cursor: pointer;
+  &:after {
+    content: "\f05d";
+    font-family: FontAwesome;
+    clear: both;
+    display: block;
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    right: 50%;
+    top: 50%;
+    transform:translate(50%, -50%);
+  }
+}
+.validation-box {
+  position: fixed;
+  z-index: 100;
+  color: red;
+  top:50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  box-shadow: 5px 5px 20px 0 gray;
+  background-color: #fff;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  &.invalid {
+    width: 300px;
+    height: 100px;
+    opacity: 1;
+    visibility: visible;
+    top: 50%;
+    .validation-message {
+      font-size: 18px;
+    }
+  }
+}
+.validation-message {
+  display: block;
+  line-height: 1.6;
+  font-size: 0;
+  text-align: center;
+  transition: 0.3s;
+}
+.employee-cover {
+  position: relative;
+  padding-right: 110px;
+  margin: 10px 0;
+}
+.info-box {
+  strong {
+    font-size: 18px;
+    display: block;
+    line-height: 1.2;
+  }
+  span {
+    font-size: 18px;
+    line-height: 1.2;
+    display: block;
+  }
+  &_contacts {
+    display: flex;
+    justify-content: space-between;
+  }
+  &_half {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  &_name {
+    width: 70%;
+    padding: 0 10px;
+  }
+  &_position {
+    width: 30%;
+    padding: 0 10px;
+  }
+  &_email {
+    width: 40%;
+    padding: 0 10px;
+  }
+  &_phone, &_date {
+    width: 30%;
+    padding: 0 10px;
+  }
+}
+.edit-buttons {
+  width: 100px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  height: 100%;
+  display: flex;
+  div {
+    width: 50%;
+    position: relative;
+    cursor: pointer;
+    &:after {
+      font-family: FontAwesome;
+      clear: both;
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+      color: white;
+    }
+  }
+}
+.edit {
+  background-color: #7fbcdb;
+  &:after {
+    content: "\f044";
+  }
+}
+.remove {
+  &:after {
+    content: "\f014";
+  }
+  background-color: #ce8080;
+}
+.valid-box {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  span {
+    color: red;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .info-box {
+    &_half {
+      flex-wrap: wrap;
+    }
+    &_name, &_position, &_email, &_phone, &_date {
+      width: 100%;
+      padding-bottom: 10px;
+    }
+  }
+  .edit-buttons {
+    width: 50px;
+    .edit, .remove {
+      position: absolute;
+      width: 100%;
+      height: 50%;
+      left: 0;
+    }
+    .edit {
+      top: 0;
+    }
+    .remove {
+      bottom: 0;
+    }
+  }
+  .employee-cover {
+    padding-right: 60px;
+  }
+  .input-cover {
+    width: 100%;
+    margin: 15px 8px;
+  }
+}
+

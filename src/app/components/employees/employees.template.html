@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="employee-cover"
+       ng-repeat="employee in $ctrl.employees track by $index"
+       style="background-color: {{$ctrl.colors[$index]}}">
+    <div class="info-box">
+      <div class="info-box_half">
+        <div class="info-box_name">
+          <strong>ИМЯ</strong>
+          <span>{{employee.employeeName}}</span>
+        </div>
+        <div class="info-box_position">
+          <strong>ДОЛЖНОСТЬ</strong>
+          <span>{{employee.position}}</span>
+        </div>
+      </div>
+
+      <div class="info-box_half">
+        <div class="info-box_email">
+          <strong>ЭЛ.ПОЧТА</strong>
+          <span>{{employee.email}}</span>
+        </div>
+        <div class="info-box_phone">
+          <strong>ТЕЛЕФОН</strong>
+          <span>{{employee.phone}}</span>
+        </div>
+        <div class="info-box_date">
+          <strong>ДАТА</strong>
+          <span>{{employee.date}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="edit-buttons">
+      <div ui-sref="edit" class="edit" ng-click="$ctrl.editPerson(employee)"></div>
+      <div class="remove" ng-click="$ctrl.removePerson(employee)"></div>
+    </div>
+  </div>
+</div>
